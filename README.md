@@ -59,9 +59,6 @@ systemctl is-enabled nodebase #To check if nodebase service is enabled on boot
 ```
 ***
 
-## Donations
-Any donation is highly appreciated
-
-**BTC**: 3MQLEcHXVvxpmwbB811qiC1c6g21ZKa7Jh
-**ETH**: 0x26B9dDa0616FE0759273D651e77Fe7dd7751E01E
-**LTC**: LNZpK4rCd1JVSB3rGKTAnTkudV9So9zexB
+## Source
+Based on:
+https://github.com/zoldur/Masternode-setup-guide/blob/master/README.md
