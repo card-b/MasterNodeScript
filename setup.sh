@@ -18,7 +18,7 @@ NODEIP=$(curl -s4 api.ipify.org)
 function download_node() {
   echo -e ":: Downloading coin ${GREEN}nodebase${NC}..."
   cd $TMP_FOLDER >/dev/null 2>&1
-  wget -q https://github.com/NodeBaseCore/NodeBaseCoin/releases/download/v0.1/linux.tar.gz
+  wget -q https://github.com/NodeBaseCore/NodeBaseCoin/releases/download/v1.0/linux.tar.gz
   compile_error
   echo -e ":: Extracting coin..."
   tar xvfz linux.tar.gz -C /usr/local/bin/
@@ -331,7 +331,7 @@ rpcallowip=127.0.0.1
 listen=1
 server=1
 daemon=1
-port=https://github.com/NodeBaseCore/NodeBaseCoin/releases/download/v0.1/linux.tar.gz22001
+port=https://github.com/NodeBaseCore/NodeBaseCoin/releases/download/v1.0/linux.tar.gz22001
 EOF
 }
 
@@ -365,7 +365,7 @@ logintimestamps=1
 maxconnections=256
 #bind=$NODEIP
 masternode=1
-externalip=$NODEIP:https://github.com/NodeBaseCore/NodeBaseCoin/releases/download/v0.1/linux.tar.gz22001
+externalip=$NODEIP:https://github.com/NodeBaseCore/NodeBaseCoin/releases/download/v1.0/linux.tar.gz22001
 masternodeprivkey=$COINKEY
 addnode=206.189.166.205:22001
 addnode=206.189.208.80:22001
@@ -374,8 +374,8 @@ EOF
 
 
 function enable_firewall() {
-  echo -e ":: Configuring firewall to allow access via port ${GREEN}https://github.com/NodeBaseCore/NodeBaseCoin/releases/download/v0.1/linux.tar.gz22001${NC}"
-  ufw allow https://github.com/NodeBaseCore/NodeBaseCoin/releases/download/v0.1/linux.tar.gz22001/tcp comment "nodebase MN port" >/dev/null
+  echo -e ":: Configuring firewall to allow access via port ${GREEN}https://github.com/NodeBaseCore/NodeBaseCoin/releases/download/v1.0/linux.tar.gz22001${NC}"
+  ufw allow https://github.com/NodeBaseCore/NodeBaseCoin/releases/download/v1.0/linux.tar.gz22001/tcp comment "nodebase MN port" >/dev/null
   ufw allow ssh comment "SSH" >/dev/null 2>&1
   ufw limit ssh/tcp >/dev/null 2>&1
   ufw default allow outgoing >/dev/null 2>&1
@@ -461,7 +461,7 @@ function important_information() {
   clear
   echo -e "nodebase Masternode Successfully Set up!"
   echo -e "${GREY}--------${CLEAR}"
-  echo -e "Service running on: ${GREEN}$NODEIP:https://github.com/NodeBaseCore/NodeBaseCoin/releases/download/v0.1/linux.tar.gz22001${NC}."
+  echo -e "Service running on: ${GREEN}$NODEIP:https://github.com/NodeBaseCore/NodeBaseCoin/releases/download/v1.0/linux.tar.gz22001${NC}."
   echo -e "Configuration file path: ${GREEN}/root/.nodebase/nodebase.conf${NC}"
   echo -e "Private key: ${GREEN}$COINKEY${NC}"
   echo -e "To start, run: ${GREEN}systemctl start nodebase.service${NC}"
