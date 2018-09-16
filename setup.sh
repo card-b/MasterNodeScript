@@ -74,8 +74,8 @@ function create_config() {
   RPCUSER=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w10 | head -n1)
   RPCPASSWORD=$(tr -cd '[:alnum:]' < /dev/urandom | fold -w22 | head -n1)
   cat << EOF > /root/.nodebase/nodebase.conf
-rpcuser=$RPCUSER
-rpcpassword=$RPCPASSWORD
+rpcuser=init
+rpcpassword=init
 #rpcport=22002
 rpcallowip=127.0.0.1
 listen=1
@@ -116,7 +116,7 @@ maxconnections=256
 #bind=$NODEIP
 masternode=1
 externalip=$NODEIP:22001
-masternodeprivkey=$COINKEY
+masternodeprivkey=init
 addnode=206.189.166.205:22001
 addnode=206.189.208.80:22001
 EOF
